@@ -1,0 +1,27 @@
+h2{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36.31px;
+}
+
+
+.text{
+    z-index: 1;
+}
+.text-layer{
+    z-index: -1;
+    background-color:#FEEDF7 ;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px; 
+    
+}
+.text-layer::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background-color:#F82BA9 ;
+ 
+}
