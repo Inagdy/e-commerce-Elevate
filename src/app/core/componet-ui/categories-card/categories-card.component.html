@@ -1,0 +1,56 @@
+<div class="flex flex-wrap gap-[24px] justify-center items-center">
+  @for (item of products.product; track $index) {
+  <div class="w-[302px] mt-[40px]">
+    <div
+      class="mb-[16px] w-full relative rounded-[20px] bg-[#FEEDF7] layer-show overflow-hidden h-[272px]"
+    >
+      <img class="w-full h-full object-fill" [src]="item.imgCover" alt="" />
+      <div
+        class="layer absolute rounded-[20px] flex gap-[40px] justify-center items-center"
+      >
+        <app-circle-ui >
+          <div (click)="getallimages(item.images)" class="relative">
+              <img class="w-[26px]" src="/icons/Vector.png" alt="" />
+
+              <img class="absolute top-[25%] right-[31%]" src="/icons/dotte.png" alt="">
+          </div>
+        
+        </app-circle-ui>
+        <app-circle-ui>
+          <img class="w-[23px]" src="/icons/heart.png" alt="" />
+        </app-circle-ui>
+      </div>
+    </div>
+
+    <div class="flex justify-between items-center">
+      <div>
+        <h2 class="card-text mb-[9px]">{{ item.title }}</h2>
+        <div class="flex gap-[4px]">
+          <img src="/icons/start.png" alt="" />
+          <img src="/icons/start.png" alt="" />
+          <img src="/icons/start.png" alt="" />
+          <img src="/icons/start.png" alt="" />
+        </div>
+
+        @if (item.priceAfterDiscount) {
+        <div class="flex gap-[2px]">
+          <span class="price mt-[9px] block"
+            >${{ item.priceAfterDiscount }}</span
+          >
+          <span class="price-old mt-[9px] block">${{ item.price }}</span>
+        </div>
+
+        }@else {
+
+        <span class="price mt-[9px] block">${{ item.price }}</span>
+        }
+      </div>
+      <div>
+        <app-circle-ui [size]="'s_m'" [color]="'basket'">
+          <img class="w-[18px]" src="/icons/basket.png" alt="" />
+        </app-circle-ui>
+      </div>
+    </div>
+  </div>
+  }
+</div>
