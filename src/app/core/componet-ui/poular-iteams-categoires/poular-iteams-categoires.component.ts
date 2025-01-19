@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 
 @Component({
   selector: 'app-poular-iteams-categoires',
@@ -12,11 +12,20 @@ export class PoularIteamsCategoiresComponent {
   activeIndex: number = 0;
 
 
-  categoires:string[] = ['Home & Living','Garment Care','Gifts Box','Occasion Gifts']
+
 
   @Input() catgorys!:any
-  
+  @Output()   keyword:EventEmitter<string>=new EventEmitter<string>()
+
+
 setactve(index:number){
 this.activeIndex=index
 }
+
+
+getkeword(name:string){
+this.keyword.emit(name)
+}
+
+
 }

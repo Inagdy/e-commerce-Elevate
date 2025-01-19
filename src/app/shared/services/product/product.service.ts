@@ -13,8 +13,8 @@ export class ProductService {
   constructor(private _httpClient:HttpClient,private _adaptallproductService:AdaptallproductService) { }
 
 
-  getAllpoularproduct():Observable<any>{
-    return this._httpClient.get('https://flower.elevateegy.com/api/v1/products').pipe(
+  getAllpoularproduct(keword:string =''):Observable<any>{
+    return this._httpClient.get(`https://flower.elevateegy.com/api/v1/products?keyword=${keword}`).pipe(
       map((res:any)=> this._adaptallproductService.adaptallproductService(res) ),
       catchError((error:any)=>{
         return throwError(error)

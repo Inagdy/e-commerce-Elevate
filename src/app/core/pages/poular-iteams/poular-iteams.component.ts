@@ -11,13 +11,14 @@ import { poularproduct } from '../../../shared/interfaces/product/poularproduct'
 import { CategoriesCardComponent } from '../../componet-ui/categories-card/categories-card.component';
 import { TitleSectionComponent } from '../../componet-ui/title-section/title-section.component';
 import { PoularIteamsCategoiresComponent } from '../../componet-ui/poular-iteams-categoires/poular-iteams-categoires.component';
+import { LayerimagespoularitemsComponent } from "../../../shared/components/UI/layerimagespoularitems/layerimagespoularitems.component";
 
 
 
 
 @Component({
   selector: 'app-poular-iteams',
-  imports: [CategoriesCardComponent, TitleSectionComponent, PoularIteamsCategoiresComponent],
+  imports: [CategoriesCardComponent, TitleSectionComponent, PoularIteamsCategoiresComponent, LayerimagespoularitemsComponent],
   templateUrl: './poular-iteams.component.html',
   styleUrl: './poular-iteams.component.scss'
 })
@@ -29,16 +30,21 @@ constructor(private _ProductService:ProductService,private _categoryService:Cate
 
 products: WritableSignal<poularproduct> = signal({ product: [] });
 categoryy=signal([])
+layerImages: string[] = []; 
+showLayerImages: boolean = false; 
 
-
+toggleLayerImages(images: string[]) {
+  this.layerImages = images;
+  this.showLayerImages = true; // Set to true when images are retrieved
+}
 ngOnInit(): void {
   this.getallproduct()
   this.getallcategories()
 }
 
 
-getallproduct(){
-  this._ProductService.getAllpoularproduct().pipe(take(1)).subscribe({
+getallproduct(kewword:string='') {
+  this._ProductService.getAllpoularproduct(kewword).pipe(take(1)).subscribe({
     next: (data) => {
       console.log(data);
        this.products.set(data)
@@ -48,6 +54,9 @@ getallproduct(){
       console.error('There was an error!', error);
     }
   })
+}
+getallproductfromcategory(keword: string){
+  this.getallproduct(keword)
 }
 
 getallcategories(){

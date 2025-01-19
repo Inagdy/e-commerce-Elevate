@@ -2,14 +2,19 @@
   @for (item of products.product; track $index) {
   <div class="w-[302px] mt-[40px]">
     <div
-      class="p-[20px] mb-[16px] w-full relative rounded-[20px] bg-[#FEEDF7] layer-show overflow-hidden h-[272px]"
+      class="mb-[16px] w-full relative rounded-[20px] bg-[#FEEDF7] layer-show overflow-hidden h-[272px]"
     >
       <img class="w-full h-full object-fill" [src]="item.imgCover" alt="" />
       <div
         class="layer absolute rounded-[20px] flex gap-[40px] justify-center items-center"
       >
-        <app-circle-ui>
-          <img class="w-[26px]" src="/icons/Vector.png" alt="" />
+        <app-circle-ui >
+          <div (click)="getallimages(item.images)" class="relative">
+              <img class="w-[26px]" src="/icons/Vector.png" alt="" />
+
+              <img class="absolute top-[25%] right-[31%]" src="/icons/dotte.png" alt="">
+          </div>
+        
         </app-circle-ui>
         <app-circle-ui>
           <img class="w-[23px]" src="/icons/heart.png" alt="" />
