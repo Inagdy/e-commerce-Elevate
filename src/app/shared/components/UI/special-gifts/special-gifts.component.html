@@ -1,0 +1,28 @@
+<section class="special-gifts">
+    <div class="special-gifts-cards">
+        <div class="slider">
+            <app-special-gift 
+                [specialGift]="specialGifts()[0]" 
+                imageMaxHeight="519px"
+            />
+        </div>
+        <div class="">
+            <app-special-gift-slider 
+                [specialGift]="specialGifts()[1]" 
+            />
+        </div>
+    </div>
+    <div class="special-gifts-cards2">
+        @for (item of lastSpecialGifts(); track item.id) {
+            <div 
+                class = "card"
+            >
+                <app-special-gift 
+                    [specialGift]="item" 
+                    imageMaxHeight="300px"
+                    [reverse]="true"
+                />
+            </div>
+        }
+    </div>
+</section>

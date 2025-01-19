@@ -1,1 +1,13 @@
-<router-outlet></router-outlet>
+<section class="home-page mr-4 ml-4">
+    <!-- <app-navbar/> -->
+    <router-outlet />
+</section>
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#4461F2"
+  type="square-jelly-box"
+  [fullScreen]="true"
+>
+  <p style="color: white">Loading...</p>
+</ngx-spinner>

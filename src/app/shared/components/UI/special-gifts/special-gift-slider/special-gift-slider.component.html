@@ -1,0 +1,90 @@
+<div class="special-gift-slider">
+  @if(specialGift().images.length !== 0) {
+  <div id="default-carousel" class="relative w-full" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div
+      class="relative overflow-hidden"
+      style="height: 519px; border-radius: 15px"
+    >
+      @for (image of specialGift().images; track $index) {
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img
+          [src]="image"
+          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          alt="..."
+        />
+      </div>
+      }
+      <div class="details">
+        <div class="sub-title">
+            {{specialGift().subTitle}}
+        </div>
+        <div class="title" [innerHTML]="specialGift().title"></div>
+        <div class="desc">
+            {{specialGift().description}}
+        </div>
+        <app-button 
+            buttonName = "shop now"
+            background = "#F82BA9"
+            [showIcon] = "true"
+            (onClick)="shopNow()"
+        />
+      </div>
+    </div>
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex indicators-buttons">
+      @for (image of specialGift().images; track $index) {
+      <button
+        type="button"
+        [attr.aria-current]="$index === currentSlide() ? 'true' : 'false'"
+        [attr.aria-label]="'Slide ' + ($index + 1)"
+        [attr.data-carousel-slide-to]="$index + 1"
+        (click)="setCurrentSlide($index)"
+      ></button>
+      }
+    </div>
+    <!-- Slider controls -->
+    <button type="button" class="cursor-pointer prev-button" data-carousel-prev>
+      <span>
+        <svg
+          class="w-4 h-4"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 6 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 1 1 5l4 4"
+          />
+        </svg>
+        <span class="sr-only">Previous</span>
+      </span>
+    </button>
+    <button type="button" class="next-button" data-carousel-next>
+      <span>
+        <svg
+          class="w-4 h-4"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 6 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m1 9 4-4-4-4"
+          />
+        </svg>
+        <span class="sr-only">Next</span>
+      </span>
+    </button>
+  </div>
+
+  }
+</div>

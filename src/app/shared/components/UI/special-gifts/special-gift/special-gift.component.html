@@ -1,0 +1,40 @@
+<section class="special-gift">
+    <div class="main-image">
+        <img 
+            [src]="specialGift().mainImage" 
+            [ngStyle]="{
+                'height' : imageMaxHeight() ? imageMaxHeight() : '100%'
+            }"
+        />
+        <div 
+            class="info"
+            [ngStyle]="{
+                'left' : reverse() ? '' : '6%',
+                'right' : reverse() ? '6%' : '',
+                'text-align' : reverse() ? 'right' : 'left'
+            }"
+        >
+            <p class="sub-title">{{specialGift().subTitle}}</p>
+            <p 
+                class="title"
+                [ngStyle]="{
+                    'margin-left' : reverse() ? 'auto' : '',
+                }"
+            >{{specialGift().title}}</p>
+            <div 
+                class="buttons"
+                [ngStyle]="{
+                    'display' : reverse() ? 'flex' : '',
+                    'justify-content' : reverse() ? 'flex-end' : ''
+                }"
+            >
+                <app-button 
+                    buttonName = "shop now"
+                    background = "#F82BA9"
+                    [showIcon] = "true"
+                    (onClick)="shopNow()"
+                />
+            </div>
+        </div>
+    </div>
+</section>
