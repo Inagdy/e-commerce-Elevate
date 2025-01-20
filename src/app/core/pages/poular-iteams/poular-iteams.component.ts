@@ -30,12 +30,17 @@ constructor(private _ProductService:ProductService,private _categoryService:Cate
 
 products: WritableSignal<poularproduct> = signal({ product: [] });
 categoryy=signal([])
-layerImages: string[] = []; 
-showLayerImages: boolean = false; 
+layerImages:  WritableSignal< string[]> = signal([]); 
+showLayerImages: WritableSignal<boolean> = signal(false); 
 
 toggleLayerImages(images: string[]) {
-  this.layerImages = images;
-  this.showLayerImages = true; // Set to true when images are retrieved
+  this.layerImages.set(images);
+  this.showLayerImages.set(true); // Set to true when images are retrieved
+}
+
+
+handleShowEvent(event: boolean) {
+  this.showLayerImages.set(event); // Update the showLayerImages signal based on the emitted event
 }
 ngOnInit(): void {
   this.getallproduct()

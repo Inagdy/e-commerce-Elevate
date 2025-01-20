@@ -11,7 +11,7 @@ export class LayerimagespoularitemsComponent {
   @Input() images: string[] = [];
 
   @Output() showEventEmitter = new EventEmitter<boolean>();
-  Show: WritableSignal<boolean> = signal(false);
+
 
   currentIndex: WritableSignal<number> = signal(0);
 

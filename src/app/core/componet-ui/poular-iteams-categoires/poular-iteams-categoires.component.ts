@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, EventEmitter, Input, Output, output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, output, signal, WritableSignal } from '@angular/core';
 
 @Component({
   selector: 'app-poular-iteams-categoires',
@@ -9,7 +9,7 @@ import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 })
 export class PoularIteamsCategoiresComponent {
 
-  activeIndex: number = 0;
+  activeIndex: WritableSignal<number> = signal(0);
 
 
 
@@ -19,7 +19,7 @@ export class PoularIteamsCategoiresComponent {
 
 
 setactve(index:number){
-this.activeIndex=index
+this.activeIndex.set(index)
 }
 
 
