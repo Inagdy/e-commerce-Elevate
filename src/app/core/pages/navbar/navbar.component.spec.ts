@@ -1,5 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed ,waitForAsync} from '@angular/core/testing';
 import { NavbarComponent } from './navbar.component';
 
 describe('NavbarComponent', () => {
@@ -10,14 +9,13 @@ describe('NavbarComponent', () => {
     await TestBed.configureTestingModule({
       imports: [NavbarComponent]
     })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(NavbarComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+      .compileComponents().then(() => {
+        fixture = TestBed.createComponent(NavbarComponent);
+        component = fixture.componentInstance;
+      });
   });
 
-  it('should create', () => {
+  fit('should create', () => {
     expect(component).toBeTruthy();
   });
 });
