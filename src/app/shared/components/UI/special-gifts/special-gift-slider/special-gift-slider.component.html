@@ -1,7 +1,6 @@
 <div class="special-gift-slider">
-  @if(specialGift().images.length !== 0) {
+  <!-- @if(specialGift().images.length !== 0) {
   <div id="default-carousel" class="relative w-full" data-carousel="slide">
-    <!-- Carousel wrapper -->
     <div
       class="relative overflow-hidden"
       style="height: 519px; border-radius: 15px"
@@ -31,7 +30,6 @@
         />
       </div>
     </div>
-    <!-- Slider indicators -->
     <div class="absolute z-30 flex indicators-buttons">
       @for (image of specialGift().images; track $index) {
       <button
@@ -43,7 +41,6 @@
       ></button>
       }
     </div>
-    <!-- Slider controls -->
     <button type="button" class="cursor-pointer prev-button" data-carousel-prev>
       <span>
         <svg
@@ -85,6 +82,29 @@
       </span>
     </button>
   </div>
-
-  }
+  } -->
+  <div class = "gift-slider-container">
+    <owl-carousel-o [options]="customOptions">
+        @for (image of specialGift().images; track image) {
+            <ng-template carouselSlide [id]="image">
+              <img [src]="image" />
+            </ng-template>
+        }
+    </owl-carousel-o>
+    <div class="details">
+      <div class="sub-title">
+          {{specialGift().subTitle}}
+      </div>
+      <div class="title" [innerHTML]="specialGift().title"></div>
+      <div class="desc">
+          {{specialGift().description}}
+      </div>
+      <app-button 
+          buttonName = "shop now"
+          background = "#F82BA9"
+          [showIcon] = "true"
+          (onClick)="shopNow()"
+      />
+    </div>
+</div>
 </div>

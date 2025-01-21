@@ -18,6 +18,5 @@ export class SpecialGiftsComponent {
   {
     this.specialGifts.set(JSON.parse(JSON.stringify(specialGifts)));
     this.lastSpecialGifts.set(JSON.parse(JSON.stringify(specialGifts.slice(-3))));
-    console.log(this.lastSpecialGifts());
   }
 }
