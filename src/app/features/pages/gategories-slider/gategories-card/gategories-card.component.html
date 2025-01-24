@@ -1,0 +1,9 @@
+<div class="w-[160px] h-[211px] md:w-[217px] md:h-[122px] rounded-[20px] md:p-4 md:gap-4  bg-[#FEEDF7] flex flex-col md:flex md:flex-row justify-start items-center ">
+    <div class="w=[90px] h-[90px] rounded-[45px] bg-[#F82BA9] flex  items-center justify-center p-5 mt-[27px] md:mt-0 ">
+        <img class="w-[50px] h-[50px]" [src]="mydata.image" alt="mydata.name">
+    </div>
+    <div class="flex flex-col items-start justify-start mt-4 md:mt-0 w-20 h-[51px] text-left">
+        <div class="font-semibold text-[1.125rem] leading-[21.6px]">{{mydata.name}}</div>
+        <div class="font-normal text-base leading-[28.8px]">{{mydata.productsCount + ' Items'}}</div>
+    </div>
+</div>

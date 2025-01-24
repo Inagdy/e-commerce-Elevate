@@ -1,0 +1,11 @@
+<div class="mx-4 my-4 md:mx-20 md:my-6">
+    <owl-carousel-o [options]="slidersettings">
+
+        @for (item of data; track $index) {
+         <ng-template carouselSlide >
+             <app-gategories-card [mydata]=item></app-gategories-card>
+         </ng-template>
+        }
+     
+       </owl-carousel-o>
+</div>
