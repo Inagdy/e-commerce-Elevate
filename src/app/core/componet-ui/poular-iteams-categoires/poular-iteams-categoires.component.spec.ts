@@ -42,7 +42,7 @@ describe('PoularIteamsCategoiresComponent', () => {
     componet.catgorys = categoriesadapt ;
     fixure.detectChanges();
     const firstCard = ele.query(By.css('.categoires'));
-    
+
      expect(firstCard.nativeElement.textContent).toContain(categoriesadapt[0].name.charAt(0).toUpperCase() + categoriesadapt[0].name.slice(1));
   })
 

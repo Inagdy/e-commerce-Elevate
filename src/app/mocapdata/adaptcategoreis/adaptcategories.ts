@@ -1,4 +1,4 @@
-export const categoriesadapt=[
+export const categoriesAdapt=[
     {
       "_id": "673c46fd1159920171827c85",
       "name": "flowers",
