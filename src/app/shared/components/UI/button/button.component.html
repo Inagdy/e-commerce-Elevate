@@ -1,15 +1,15 @@
 <button
     (click)="onButtonClick()"
-    [disabled]="disabled()"
+    [disabled]="buttonInfo().disabled"
     class = "custom-button"
     [ngStyle]="{
-        'color' : color(),
-        'background' : background(),
-        'border-radius.px' : borderRadius()
+        'color' : buttonInfo().color,
+        'background' : buttonInfo().background,
+        'border-radius.px' : buttonInfo().borderRadius
     }"
 >
-    {{buttonName()}}
-    @if(showIcon())
+    {{buttonInfo().buttonName}}
+    @if(buttonInfo().showIcon)
     {
         <i class = "pi pi-arrow-right"></i>
     }

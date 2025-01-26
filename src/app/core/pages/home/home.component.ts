@@ -1,5 +1,4 @@
-import { Component, signal } from '@angular/core';
-import { Subject, takeUntil } from 'rxjs';
+import { Component } from '@angular/core';
 import { SpecialGiftsComponent } from '../../../shared/components/UI/special-gifts/special-gifts.component';
 @Component({
   selector: 'app-home',
@@ -8,14 +7,5 @@ import { SpecialGiftsComponent } from '../../../shared/components/UI/special-gif
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  $endSubs$:Subject<any> = new Subject();
   constructor(){}
-  ngOnInit()
-  {
-    
-  }
-  ngOnDestory()
-  {
-    
-  }
 }

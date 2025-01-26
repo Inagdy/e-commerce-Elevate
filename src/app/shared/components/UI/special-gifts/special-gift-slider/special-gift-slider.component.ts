@@ -2,6 +2,7 @@ import { Component, input, InputSignal, signal } from '@angular/core';
 import { ISpecialGifts } from '../../../../../core/interfaces/special-gifts';
 import { ButtonComponent } from "../../button/button.component";
 import { CarouselModule , OwlOptions } from 'ngx-owl-carousel-o';
+import { IButton } from '../../../../../core/interfaces/button';
 @Component({
   selector: 'app-special-gift-slider',
   imports: [ButtonComponent , CarouselModule],
@@ -43,6 +44,14 @@ export class SpecialGiftSliderComponent {
       '<i class="pi pi-angle-left"></i>',
       '<i class="pi pi-angle-right"></i>'
     ]
+  }
+  buttonInfo:IButton = {
+    buttonName : "shop now",
+    background : "#F82BA9",
+    showIcon : true,
+    borderRadius : 10,
+    color : "#fff",
+    disabled : false
   }
   setCurrentSlide(index: number): void {
     this.currentSlide.set(index);
