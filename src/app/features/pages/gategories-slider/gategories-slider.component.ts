@@ -12,15 +12,6 @@ import { Gategory } from '../../../shared/interfaces/gategory/gategory';
   styleUrl: './gategories-slider.component.scss'
 })
 export class GategoriesSliderComponent {
-  public data!: Gategory[];
-  constructor( private _categoryService:CategoryService) { }
-
-  ngOnInit(): void {
-    this._categoryService.getAllgategory().subscribe(data => {
-      this.data = data;
-    });
-  }
- 
   slidersettings: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -45,5 +36,15 @@ export class GategoriesSliderComponent {
     },
     nav: true
   }
+  public data!: Gategory[];
+  constructor( private _categoryService:CategoryService) { }
+
+  ngOnInit(): void {
+    this._categoryService.getAllgategory().subscribe(data => {
+      this.data = data;
+    });
+  }
+ 
+
 
 }
