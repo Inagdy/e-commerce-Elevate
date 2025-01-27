@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from "../../../core/pages/navbar/navbar.component";
 import { PoularIteamsComponent } from "../../../core/pages/poular-iteams/poular-iteams.component";
 
 
 @Component({
   selector: 'app-home',
-  imports: [NavbarComponent, PoularIteamsComponent ],
+  imports: [ PoularIteamsComponent ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
