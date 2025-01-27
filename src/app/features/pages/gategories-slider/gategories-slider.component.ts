@@ -13,13 +13,16 @@ import { Gategory } from '../../../shared/interfaces/gategory/gategory';
 })
 export class GategoriesSliderComponent {
   slidersettings: OwlOptions = {
+    autoplay:true,
+    autoplayTimeout:5000,
+    autoplayHoverPause:false,
     loop: true,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
     dots: false,
     navSpeed: 700,
-    navText: ['', ''],
+    
     responsive: {
       0: {
         items: 2
@@ -34,10 +37,10 @@ export class GategoriesSliderComponent {
         items: 5
       }
     },
-    nav: true
+    nav: false
   }
   public data!: Gategory[];
-  constructor( private _categoryService:CategoryService) { }
+  constructor( private _categoryService:CategoryService) {}
 
   ngOnInit(): void {
     this._categoryService.getAllgategory().subscribe(data => {
