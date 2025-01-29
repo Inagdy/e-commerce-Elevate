@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed ,waitForAsync} from '@angular/core/testing';
-import { GategoriesCardComponent } from './gategories-card.component';
+import { GategoriesCardComponent } from './categories-card.component';
 
 describe('GategoriesCardComponent', () => {
   let component: GategoriesCardComponent;

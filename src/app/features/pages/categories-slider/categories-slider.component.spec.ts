@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed ,waitForAsync} from '@angular/core/testing';
-import { GategoriesSliderComponent } from './gategories-slider.component';
+import { GategoriesSliderComponent } from './categories-slider.component';
 
 describe('GategoriesSliderComponent', () => {
   let component: GategoriesSliderComponent;
