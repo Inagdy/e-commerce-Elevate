@@ -11,24 +11,11 @@
   </div>
   <div class="md:mx-6 md:my-10">
     <ul class="flex felx-row md:gap-[4.424rem]">
-      <li class="w-[9.147rem] h-[3.188rem]">
-        <img class="w-auto" src="images/about-us/coconut.png" alt="coconut" />
-      </li>
-      <li class="w-[9.147rem] h-[3.188rem]">
-        <img class="w-auto" src="images/about-us/ginyard.png" alt="ginyard" />
-      </li>
-      <li class="w-[9.147rem] h-[3.188rem]">
-        <img class="w-auto" src="images/about-us/ingoude.png" alt="ingoude" />
-      </li>
-      <li class="w-[9.147rem] h-[3.188rem]">
-        <img class="w-auto" src="images/about-us/velvet.png" alt="velvet" />
-      </li>
-      <li class="w-[9.147rem] h-[3.188rem]">
-        <img class="w-auto" src="images/about-us/ingoude2.png" alt="ingoude2" />
-      </li>
-      <li class="w-[9.147rem] h-[3.188rem]">
-        <img class="w-auto" src="images/about-us/habus.png" alt="habus" />
-      </li>
+       @for (image of images; track $index) {
+        <li class="w-[9.147rem] h-[3.188rem]">
+          <img class="w-auto" [src]="'images/about-us/' + image" alt="image" />
+        </li>
+      }
     </ul>
   </div>
-</section>
+</section> 

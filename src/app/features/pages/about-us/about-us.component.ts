@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './about-us.component.scss'
 })
 export class AboutUsComponent {
+  public images:string[]=['coconut.png','ginyard.png','habus.png','ingoude.png','ingoude2.png','velvet.png']
 
 }
