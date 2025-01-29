@@ -9,6 +9,6 @@
 <app-categories-card  [products]="products()"  (imagses)="toggleLayerImages($event)"></app-categories-card>
 
 
-@if (showLayerImages) {
-<app-layerimagespoularitems (showEventEmitter)="showLayerImages=$event" [images]="layerImages"></app-layerimagespoularitems>
+@if (showLayerImages()) {
+<app-layerimagespoularitems (showEventEmitter)="handleShowEvent($event)" [images]="layerImages()"></app-layerimagespoularitems>
 }
