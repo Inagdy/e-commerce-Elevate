@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PoularIteamsComponent } from "../../../core/pages/poular-iteams/poular-iteams.component";
-import { AboutUsComponent } from "../about-us/about-us.component";
+import { AboutUsComponent } from "../trasted-by-us/trasted-by.component";
 import { CategoriesCardComponent } from "../../../core/componet-ui/categories-card/categories-card.component";
 
 
