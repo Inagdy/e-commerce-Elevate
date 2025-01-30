@@ -14,4 +14,6 @@ export class NavbarComponent  {
   menuClick(){
     this.menuBar = !this.menuBar;
   }
+
+  
 }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OurgallaryComponent } from './ourgallary.component';
+import { HomeComponent } from './home.component';
 
-describe('OurgallaryComponent', () => {
-  let component: OurgallaryComponent;
-  let fixture: ComponentFixture<OurgallaryComponent>;
+describe('HomeComponent', () => {
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [OurgallaryComponent]
+      imports: [HomeComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(OurgallaryComponent);
+    fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,4 +21,3 @@ describe('OurgallaryComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-
