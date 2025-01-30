@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TitleSectionComponent } from "../../../../../core/componet-ui/title-section/title-section.component";
+import { TitleSectionComponent } from '../../../core/componet-ui/title-section/title-section.component';
 
 @Component({
   selector: 'app-ourgallary',

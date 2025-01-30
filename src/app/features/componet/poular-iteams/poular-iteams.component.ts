@@ -5,14 +5,14 @@ import { Component, OnInit, signal, WritableSignal } from '@angular/core';
 // import { PoularIteamsCategoiresComponent } from "../../componet-ui/poular-iteams-categoires/poular-iteams-categoires.component";
 
 import { take } from 'rxjs';
-import { CategoriesCardComponent } from '../../../../../core/componet-ui/categories-card/categories-card.component';
-import { TitleSectionComponent } from '../../../../../core/componet-ui/title-section/title-section.component';
-import { PoularIteamsCategoiresComponent } from '../../../../../core/componet-ui/poular-iteams-categoires/poular-iteams-categoires.component';
-import { LayerimagespoularitemsComponent } from '../../../../../shared/components/UI/layerimagespoularitems/layerimagespoularitems.component';
-import { ProductService } from '../../../../../shared/services/product/product.service';
-import { CategoryService } from '../../../../../shared/services/categorys/category.service';
-import { poularproduct } from '../../../../../shared/interfaces/product/poularproduct';
-import { Catogoryadapt_i } from '../../../../../shared/interfaces/catogoryadpat/catogoryadapt';
+import { CategoriesCardComponent } from '../../../core/componet-ui/categories-card/categories-card.component';
+import { TitleSectionComponent } from '../../../core/componet-ui/title-section/title-section.component';
+import { PoularIteamsCategoiresComponent } from '../../../core/componet-ui/poular-iteams-categoires/poular-iteams-categoires.component';
+import { LayerimagespoularitemsComponent } from '../../../shared/components/UI/layerimagespoularitems/layerimagespoularitems.component';
+import { ProductService } from '../../../shared/services/product/product.service';
+import { CategoryService } from '../../../shared/services/categorys/category.service';
+import { poularproduct } from '../../../shared/interfaces/product/poularproduct';
+import { Catogoryadapt_i } from '../../../shared/interfaces/catogoryadpat/catogoryadapt';
 
 
 
