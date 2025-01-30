@@ -8,4 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class TitleSectionComponent {
 @Input() title: string = 'Poular Items'
+@Input() titlesectionn!: string
+@Input() style!: string
 }

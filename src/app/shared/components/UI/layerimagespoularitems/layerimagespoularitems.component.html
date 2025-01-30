@@ -1,11 +1,26 @@
-
-
-<div (click)="showhidden()" class="bg-[#F82BA9B2] w-full h-full z-10 fixed top-0 right-0 flex justify-center items-center">
- 
-    <div class="relative">
-      <img [src]="images[currentIndex()]" alt="Current Image">
-   
-   
-    </div>
-
+<div
+  class="bg-[#F82BA9B2] w-full h-full z-10 fixed top-0 right-0 flex justify-center items-center"
+>
+<app-circle-ui (click)="showhidden()" [size]="'m'" class="absolute top-[20px] right-[20px]">
+  <i class="text-[50px] text-white fa-solid fa-xmark"></i>
+</app-circle-ui>
+  <div class="relative">
+    <img [src]="images[currentIndex()]" alt="Current Image" />
+    <app-circle-ui
+      (click)="showNextImage()"
+      class="absolute top-[50%] right-[10px]"
+    >
+      <div>
+        <i class="text-white fa-solid fa-chevron-right"></i>
+      </div>
+    </app-circle-ui>
+    <app-circle-ui
+      (click)="showPrevImage()"
+      class="absolute top-[50%] left-[10px]"
+    >
+      <div class="">
+        <i class="text-white fa-solid fa-chevron-left"></i>
+      </div>
+    </app-circle-ui>
+  </div>
 </div>

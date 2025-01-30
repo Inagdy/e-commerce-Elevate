@@ -1,0 +1,14 @@
+<div class="flex flex-wrap   justify-center md:justify-between items-center">
+  <app-title-section class="mb-[10px]"></app-title-section>
+
+  <app-poular-iteams-categoires (keyword)="getallproduct($event)" [catgorys]="categoryy()"></app-poular-iteams-categoires>
+</div>
+
+
+
+<app-categories-card  [products]="products()"  (imagses)="toggleLayerImages($event)"></app-categories-card>
+
+
+@if (showLayerImages()) {
+<app-layerimagespoularitems (showEventEmitter)="handleShowEvent($event)" [images]="layerImages()"></app-layerimagespoularitems>
+}
