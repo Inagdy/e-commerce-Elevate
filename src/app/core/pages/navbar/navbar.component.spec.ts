@@ -5,17 +5,17 @@ describe('NavbarComponent', () => {
   let component: NavbarComponent;
   let fixture: ComponentFixture<NavbarComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(waitForAsync (() => {
+    TestBed.configureTestingModule({
       imports: [NavbarComponent]
     })
       .compileComponents().then(() => {
         fixture = TestBed.createComponent(NavbarComponent);
         component = fixture.componentInstance;
       });
-  });
+  }));
 
-  fit('should create', () => {
+fit('should create', () => {
     expect(component).toBeTruthy();
   });
 });
