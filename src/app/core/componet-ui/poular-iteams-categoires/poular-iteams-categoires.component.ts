@@ -1,15 +1,16 @@
-import { NgClass } from '@angular/common';
-import { Component, EventEmitter, Input, Output, output } from '@angular/core';
+import { NgClass, UpperCasePipe } from '@angular/common';
+import { Component, EventEmitter, Input, Output, output, signal, WritableSignal } from '@angular/core';
+import { FirstuppercasePipe } from '../../../shared/pipe/firstuppercase.pipe';
 
 @Component({
   selector: 'app-poular-iteams-categoires',
-  imports: [NgClass],
+  imports: [NgClass,FirstuppercasePipe],
   templateUrl: './poular-iteams-categoires.component.html',
   styleUrl: './poular-iteams-categoires.component.scss'
 })
 export class PoularIteamsCategoiresComponent {
 
-  activeIndex: number = 0;
+  activeIndex: WritableSignal<number> = signal(0);
 
 
 
@@ -19,7 +20,7 @@ export class PoularIteamsCategoiresComponent {
 
 
 setactve(index:number){
-this.activeIndex=index
+this.activeIndex.set(index)
 }
 
 

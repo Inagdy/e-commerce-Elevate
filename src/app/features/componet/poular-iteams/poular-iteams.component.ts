@@ -5,13 +5,15 @@ import { Component, OnInit, signal, WritableSignal } from '@angular/core';
 // import { PoularIteamsCategoiresComponent } from "../../componet-ui/poular-iteams-categoires/poular-iteams-categoires.component";
 
 import { take } from 'rxjs';
+import { CategoriesCardComponent } from '../../../core/componet-ui/categories-card/categories-card.component';
+import { TitleSectionComponent } from '../../../core/componet-ui/title-section/title-section.component';
+import { PoularIteamsCategoiresComponent } from '../../../core/componet-ui/poular-iteams-categoires/poular-iteams-categoires.component';
+import { LayerimagespoularitemsComponent } from '../../../shared/components/UI/layerimagespoularitems/layerimagespoularitems.component';
 import { ProductService } from '../../../shared/services/product/product.service';
 import { CategoryService } from '../../../shared/services/categorys/category.service';
 import { poularproduct } from '../../../shared/interfaces/product/poularproduct';
-import { CategoriesCardComponent } from '../../componet-ui/categories-card/categories-card.component';
-import { TitleSectionComponent } from '../../componet-ui/title-section/title-section.component';
-import { PoularIteamsCategoiresComponent } from '../../componet-ui/poular-iteams-categoires/poular-iteams-categoires.component';
-import { LayerimagespoularitemsComponent } from "../../../shared/components/UI/layerimagespoularitems/layerimagespoularitems.component";
+import { Catogoryadapt_i } from '../../../shared/interfaces/catogoryadpat/catogoryadapt';
+
 
 
 
@@ -29,13 +31,18 @@ constructor(private _ProductService:ProductService,private _categoryService:Cate
 
 
 products: WritableSignal<poularproduct> = signal({ product: [] });
-categoryy=signal([])
-layerImages: string[] = []; 
-showLayerImages: boolean = false; 
+categoryy:WritableSignal<Catogoryadapt_i>=signal([])
+layerImages:  WritableSignal< string[]> = signal([]); 
+showLayerImages: WritableSignal<boolean> = signal(false); 
 
 toggleLayerImages(images: string[]) {
-  this.layerImages = images;
-  this.showLayerImages = true; // Set to true when images are retrieved
+  this.layerImages.set(images);
+  this.showLayerImages.set(true); // Set to true when images are retrieved
+}
+
+
+handleShowEvent(event: boolean) {
+  this.showLayerImages.set(event); // Update the showLayerImages signal based on the emitted event
 }
 ngOnInit(): void {
   this.getallproduct()
