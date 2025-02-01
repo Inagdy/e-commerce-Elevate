@@ -8,4 +8,11 @@
             <span>{{review().reviewerRole}}</span>
         </div>
     </div>
+    <div class="reviewer-desc">
+        <p>{{review().reviewerDescription}}</p>
+        <div class = "rating-review">
+            <app-rating [ratingNum]="review().reviewerRate" />
+            <img src="images/img14.svg" alt="">
+        </div>
+    </div>
 </section>

@@ -4,3 +4,79 @@
     background-size: cover;
     padding:40px 20px 20px;
 }
+::ng-deep .reviews-carousel
+{
+    .owl-nav
+    {
+        .owl-prev
+        {
+            width: 40px;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            // transform: translateY(50%);
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: var(--main-color);
+            &:hover
+            {
+                background-color: var(--main-color);
+            }
+            i
+            {
+                font-size: 1.4rem;
+            }
+        }
+        .owl-next
+        {
+            width: 40px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            // transform: translateY(50%);
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: var(--main-color);
+            &:hover
+            {
+                background-color: var(--main-color);
+            }
+            i
+            {
+                font-size: 1.4rem;
+            }
+        }
+    }
+    .owl-dots
+    {
+        .owl-dot
+        {
+            span
+            {
+                background-color: #fff;
+                width:15px;
+                height:15px;
+                transition: .4s;
+                &:hover
+                {
+                    background-color: #fff;
+                }
+            }
+            &.active
+            {
+                span
+                {
+                    background-color: #fff;
+                    width:30px;
+                    height:15px;
+                }
+            }
+        }
+    }
+}

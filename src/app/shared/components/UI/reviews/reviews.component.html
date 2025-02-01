@@ -1,5 +1,5 @@
 <section class="reviews">
-    <owl-carousel-o [options]="customOptions">
+    <owl-carousel-o [options]="customOptions" class = "reviews-carousel">
         @for (review of reviews(); track review.id) {
             <ng-container>
                 <ng-template carouselSlide [id]="review.id.toString()">
