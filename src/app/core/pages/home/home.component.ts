@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { SpecialGiftsComponent } from '../../../shared/components/UI/special-gifts/special-gifts.component';
+import { ReviewsComponent } from "../../../shared/components/UI/reviews/reviews.component";
 @Component({
   selector: 'app-home',
-  imports: [SpecialGiftsComponent],
+  imports: [ReviewsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

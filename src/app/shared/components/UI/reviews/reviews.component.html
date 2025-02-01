@@ -1,0 +1,11 @@
+<section class="reviews">
+    <owl-carousel-o [options]="customOptions">
+        @for (review of reviews(); track review.id) {
+            <ng-container>
+                <ng-template carouselSlide [id]="review.id.toString()">
+                  <app-review [review]="review" />
+                </ng-template>
+              </ng-container>
+        }
+      </owl-carousel-o>
+</section>

@@ -1,0 +1,34 @@
+@import '../../../../../../styles/fonts.scss';
+.review
+{
+    background-color: #fff;
+    padding: 20px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius:30px;
+    border-top-right-radius:50px;
+    border-bottom-left-radius:50px;
+    &-info
+    {
+        display: flex;
+        align-items: center;
+        gap:20px;
+        .reviewer-photo
+        {
+            img
+            {
+                width: 60px;
+            }
+        }
+        .reviewer-details
+        {
+            p
+            {
+                color:var(--secondary-color);
+                text-transform: capitalize;
+                @extend .inter-font;
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+        }
+    }
+}
