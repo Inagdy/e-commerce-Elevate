@@ -1,0 +1,27 @@
+<section
+  class="md:mx-[80.5px] md:my-20 my-6 md:rounded-[20px] flex flex-col flex-nowrap items-center justify-center bg-[--secand-color] overflow-hidden" 
+>
+  <div
+    class="my-4 ml-[15px] mr-[23px] md:my-10 font-bold text-xl md:text-3xl leading-[36.31px]"
+  >
+    <h2 class="mb-[7px]">
+      Trusted By Over <span class="text-[--main-color]">4.5k+</span>Companies
+    </h2>
+    <div class="w-[10.063rem] h-[2px] bg-[--main-color]"></div>
+  </div>
+  <div class="md:mx-6 md:my-10">
+    <ul class="flex felx-row md:gap-[4.424rem]">
+       @for (image of images; track $index) {
+        <li class="w-[9.147rem] h-[3.188rem]">
+          <img class="w-full" [src]="'images/trusted-by/' + image" alt="image" />
+        </li>
+      }
+    </ul>
+  </div>
+  <div class="my-4 md:invisible visible">
+    <app-botton class="w-auto h-[45px] rounded-[10px] bg-[--main-color] flex flex-row flex-nowrap" >
+      <h2 class="py-2 pl-2 pr-[5px] inline" >View All Brands</h2>
+      <i class="fa-solid fa-arrow-right w-[14px] h-4 mr-[5px]" style="color: #ffffff; "></i>
+    </app-botton>
+  </div>
+</section> 
