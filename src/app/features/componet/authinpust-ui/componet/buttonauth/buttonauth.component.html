@@ -1,0 +1,12 @@
+<button
+[disabled]="calapi()"
+[disabled]="Adisabled"
+class="bg-[#F82BA9] font-[500] text-[16px] mt-[32px] w-full text-white rounded-[31px] px-[31px] py-[8px]">
+@if (looding()) {
+    <i class="fa-solid fa-spinner fa-spin bg-black-alpha-10"></i>
+
+}@else {
+    {{ textButton }}
+}
+
+</button>

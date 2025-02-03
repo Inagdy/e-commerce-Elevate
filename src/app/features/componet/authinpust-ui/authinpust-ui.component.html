@@ -1,0 +1,63 @@
+<form class=" " action="" [formGroup]="form" (ngSubmit)="outputinput()">
+  <app-textauth [Text]="headbages"></app-textauth>
+
+
+  <app-errapi></app-errapi>
+  <div class="flex flex-col">
+    @for (item of Input; track $index) {
+    <!-- inputs  -->
+    <input
+      class="m-[10px] p-[8px] rounded-[20px] outline-none shadow"
+      [formControlName]="item.formcontrol"
+      [type]="item.type"
+      [placeholder]="item.placeholder"
+    />
+
+    <!-- error come from FromGroup -->
+    <app-errocomponets
+      [formGroup]="form"
+      [inputname]="item.formcontrol"
+    ></app-errocomponets>
+    }
+  </div>
+@if (Bage == 'login') {
+    <div class="flex justify-between items-center mt-[20px]">
+    <div>
+      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+      <label class="ms-1" for="vehicle1"> Remind me</label><br />
+    </div>
+    <div>
+      <span
+        class="underline underline-offset-[3px] text-[#F82BA9] font-[600] text-14px"
+        >Forgetpassword</span
+      >
+    </div>
+  </div>
+}
+
+
+  <div class="flex justify-center items-center mt-[24px]">
+    @if (Bage == 'login') {
+       <p>
+      No account?
+      <span
+      [routerLink]="'/regester'"
+        class="underline underline-offset-[5px] text-[#F82BA9] font-[600] text-14px"
+        >Create one here</span
+      >
+    </p>
+    }@else if (Bage =='regster') {
+
+      <p>
+        Already have an account?
+        <span
+        [routerLink]="'/login'"
+          class="underline underline-offset-[5px] text-[#F82BA9] font-[600] text-14px"
+          >log in</span
+        >
+      </p>
+    }
+   
+  </div>
+  <app-buttonauth [textButton]="buttonvalue"></app-buttonauth>
+</form>
