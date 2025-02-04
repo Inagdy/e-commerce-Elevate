@@ -35,6 +35,8 @@ export class callAPIService {
   callapi: WritableSignal<boolean> = signal(false);
   // to show error api
   errormassege: WritableSignal<string> = signal('');
+  // steps
+  step: WritableSignal<number> = signal(1);
 
 
   singup(form: SingupForm, singUp: FormGroup) {
@@ -99,9 +101,10 @@ export class callAPIService {
       this._mAuthapiService.forgetpass(formvalu).pipe(take(1)).subscribe({
         next: (res) => {
           this.errormassege.set('');
+          this.step.set(2)
           this.looding.set(false);
           this.callapi.set(false);
-          this.rout.navigate(['/auth/VerifyResetCode']);
+        
           console.log(res);
         },
         error: (err) => {
@@ -124,9 +127,10 @@ export class callAPIService {
         next: (res) => {
           console.log(res);
           this.errormassege.set('');
+          this.step.set(3)
           this.looding.set(false);
           this.callapi.set(false);
-          this.rout.navigate(['/auth/RestPassword']);
+    
         },
         error: (err) => {
           console.log(err);
@@ -148,8 +152,8 @@ export class callAPIService {
           console.log(res);
           this.errormassege.set('');
           this.looding.set(false);
+          this.step.set(4)
           this.callapi.set(false);
-          this.rout.navigate(['/auth/login']);
         },
         error: (err) => {
           console.log(err);

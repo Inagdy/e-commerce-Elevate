@@ -1,13 +1,13 @@
 import { Component, inject, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthinpustUiComponent } from "../../componet/authinpust-ui/authinpust-ui.component";
-import { Inpust } from '../../componet/authinpust-ui/interfaces/inpusts/inpust';
-import { ModallayerComponent } from "../../../shared/components/UI/modallayer/modallayer.component";
-import { callAPIService } from '../../../shared/services/CALLAPI/callapi.service';
+import { AuthinpustUiComponent } from "../../../../features/componet/authinpust-ui/authinpust-ui.component";
+import { Inpust } from '../../../../features/componet/authinpust-ui/interfaces/inpusts/inpust';
+import { ModallayerComponent } from "../modallayer/modallayer.component";
+import { callAPIService } from '../../../services/CALLAPI/callapi.service';
 
 @Component({
   selector: 'app-login',
-  imports: [AuthinpustUiComponent, ModallayerComponent],
+  imports: [AuthinpustUiComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })

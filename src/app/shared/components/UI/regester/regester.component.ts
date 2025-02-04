@@ -1,13 +1,14 @@
 import { Component, inject } from '@angular/core';
-import { ModallayerComponent } from '../../../shared/components/UI/modallayer/modallayer.component';
-import { AuthinpustUiComponent } from '../../componet/authinpust-ui/authinpust-ui.component';
-import { Inpust } from '../../componet/authinpust-ui/interfaces/inpusts/inpust';
+
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { callAPIService } from '../../../shared/services/CALLAPI/callapi.service';
+import { AuthinpustUiComponent } from '../../../../features/componet/authinpust-ui/authinpust-ui.component';
+import { callAPIService } from '../../../services/CALLAPI/callapi.service';
+import { Inpust } from '../../../../features/componet/authinpust-ui/interfaces/inpusts/inpust';
+
 
 @Component({
   selector: 'app-regester',
-  imports: [ModallayerComponent, AuthinpustUiComponent],
+  imports: [ AuthinpustUiComponent],
   templateUrl: './regester.component.html',
   styleUrl: './regester.component.scss',
 })
