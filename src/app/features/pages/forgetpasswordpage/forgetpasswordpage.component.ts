@@ -4,10 +4,11 @@ import { callAPIService } from '../../../shared/services/CALLAPI/callapi.service
 import { VerifycodeComponent } from "../../../shared/components/UI/verifycode/verifycode.component";
 import { ResetpasswordComponent } from "../../../shared/components/UI/resetpassword/resetpassword.component";
 import { LoginpageComponent } from "../loginpage/loginpage.component";
+import { LoginComponent } from "../../../shared/components/UI/login/login.component";
 
 @Component({
   selector: 'app-forgetpasswordpage',
-  imports: [ForgetpasswordComponent, VerifycodeComponent, ResetpasswordComponent, LoginpageComponent],
+  imports: [ForgetpasswordComponent, VerifycodeComponent, ResetpasswordComponent, LoginComponent],
   templateUrl: './forgetpasswordpage.component.html',
   styleUrl: './forgetpasswordpage.component.scss'
 })

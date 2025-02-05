@@ -1,0 +1,10 @@
+<app-modallayer>
+    @if (currentPage === 'login') {
+        <app-login></app-login>
+      } @else if (currentPage === 'register') {
+        <app-regester></app-regester>
+      }    
+       @else if (currentPage === 'forgetPassword') {
+        <app-forgetpasswordpage></app-forgetpasswordpage>
+      }    
+</app-modallayer>

@@ -38,6 +38,12 @@ export class callAPIService {
   // steps
   step: WritableSignal<number> = signal(1);
 
+  showloginpage: WritableSignal<boolean> = signal(false);
+
+  // Method to close the login modal
+  closeLoginModal() {
+    this.showloginpage.set(false);
+  }
 
   singup(form: SingupForm, singUp: FormGroup) {
     if (singUp.valid) {
@@ -79,7 +85,10 @@ export class callAPIService {
             this.looding.set(false);
             this.callapi.set(false);
             this.rout.navigate(['/home']);
+
+            this.closeLoginModal();
             return;
+         
           }
         },
         error: (err) => {

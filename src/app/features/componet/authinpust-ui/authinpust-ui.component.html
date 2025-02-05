@@ -28,6 +28,7 @@
     </div>
     <div>
       <span
+      (click)="switchToFogetPass()"
         class="underline underline-offset-[3px] text-[#F82BA9] font-[600] text-14px"
         >Forgetpassword</span
       >
@@ -41,7 +42,7 @@
        <p>
       No account?
       <span
-      [routerLink]="'/regester'"
+      (click)="switchToRegister()"
         class="underline underline-offset-[5px] text-[#F82BA9] font-[600] text-14px"
         >Create one here</span
       >
@@ -51,8 +52,9 @@
       <p>
         Already have an account?
         <span
-        [routerLink]="'/login'"
+
           class="underline underline-offset-[5px] text-[#F82BA9] font-[600] text-14px"
+          (click)="switchToLogin()"
           >log in</span
         >
       </p>

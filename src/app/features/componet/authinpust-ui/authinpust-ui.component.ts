@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { Inpust } from './interfaces/inpusts/inpust';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ErrocomponetsComponent } from "./componet/errocomponets/errocomponets.component";
@@ -7,10 +7,11 @@ import { BottonComponent } from "../../../shared/components/button/button.compon
 import { ButtonauthComponent } from "./componet/buttonauth/buttonauth.component";
 import { ErrapiComponent } from "./componet/errorapi/errapi/errapi.component";
 import { RouterLink } from '@angular/router';
+import { SwitchpagesService } from '../../../shared/services/switchpage/switchpages.service';
 
 @Component({
   selector: 'app-authinpust-ui',
-  imports: [ReactiveFormsModule, ErrocomponetsComponent, TextauthComponent, ButtonauthComponent, ErrapiComponent ,RouterLink],
+  imports: [ReactiveFormsModule, ErrocomponetsComponent, TextauthComponent, ButtonauthComponent, ErrapiComponent ],
   templateUrl: './authinpust-ui.component.html',
   styleUrl: './authinpust-ui.component.scss'
 })
@@ -23,10 +24,12 @@ export class AuthinpustUiComponent {
   // This value receives headbagesname
   @Input() headbages!: string;
 
-  // 
+  // p
   @Input() buttonvalue!: string;
   @Input() Bage!: string;
 
+
+  _switchpages = inject(SwitchpagesService)
 
   // to sent data out to parent componet
   outputinput() {
@@ -39,4 +42,17 @@ export class AuthinpustUiComponent {
     const control = this.form.get(controlName);
     return control?.invalid && control?.touched;
   }
+
+  switchToRegister() {
+    this._switchpages.switchToRegister();
+  }
+
+  switchToLogin() {
+    this._switchpages.switchToLogin();
+  }
+  switchToFogetPass() {
+    this._switchpages.switchToForgetpass();
+  }
+
+
 }

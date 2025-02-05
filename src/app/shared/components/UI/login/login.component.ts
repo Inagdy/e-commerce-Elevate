@@ -1,19 +1,18 @@
-import { Component, inject, Inject } from '@angular/core';
+import { Component, EventEmitter, inject, Inject, Output, signal, WritableSignal } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthinpustUiComponent } from "../../../../features/componet/authinpust-ui/authinpust-ui.component";
+import { AuthinpustUiComponent } from '../../../../features/componet/authinpust-ui/authinpust-ui.component';
 import { Inpust } from '../../../../features/componet/authinpust-ui/interfaces/inpusts/inpust';
-import { ModallayerComponent } from "../modallayer/modallayer.component";
+import { ModallayerComponent } from '../modallayer/modallayer.component';
 import { callAPIService } from '../../../services/CALLAPI/callapi.service';
 
 @Component({
   selector: 'app-login',
   imports: [AuthinpustUiComponent],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-
-  callAPIService =inject(callAPIService)
+  callAPIService = inject(callAPIService);
 
   loginform: FormGroup = new FormGroup({
     email: new FormControl(null, [Validators.required]),
@@ -30,7 +29,6 @@ export class LoginComponent {
   ];
 
   login(formvalue: any) {
-    this.callAPIService.singin(formvalue,this.loginform)
+    this.callAPIService.singin(formvalue, this.loginform);
   }
-
 }
