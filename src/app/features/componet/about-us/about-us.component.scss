@@ -1,10 +1,12 @@
 .image-container {
     display: inline-block;
     padding:10px;
-    border: 4px solid var(--main-color);
-    border-radius:53px 168px 186px 132px;
+    border-left: 4px solid var(--main-color);
+    border-top: 4px solid var(--main-color);
+    border-bottom: 4px solid var(--main-color);
+    border-radius:153px 380px 441px 410px ;
     transform: rotate(3.09deg); 
-    left: -33px;
+    left: -15px;
     right: 17px;
     top: -23px;
     bottom: -12px;
