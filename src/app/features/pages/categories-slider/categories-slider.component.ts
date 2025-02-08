@@ -4,10 +4,11 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { CategoryService } from '../../../shared/services/categorys/category.service';
 import { Gategory } from '../../../shared/interfaces/gategory/gategory';
 import { categoriesCardComponent } from './categories-card/categories-card.component';
+import { SideBarComponent } from "../../componet/side-bar/side-bar.component";
 
 @Component({
   selector: 'app-categories-slider',
-  imports: [CarouselModule, categoriesCardComponent],
+  imports: [CarouselModule, categoriesCardComponent, SideBarComponent],
   templateUrl: './categories-slider.component.html',
   styleUrl: './categories-slider.component.scss'
 })
