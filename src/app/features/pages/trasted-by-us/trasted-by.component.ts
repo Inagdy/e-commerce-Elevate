@@ -7,7 +7,7 @@ import { BottonComponent } from "../../../shared/components/button/button.compon
   templateUrl: './trasted-by.component.html',
   styleUrl: './trasted-by.component.scss'
 })
-export class AboutUsComponent {
+export class trustedByComponent {
   public images:string[]=['coconut.png','ginyard.png','habus.png','ingoude.png','ingoude2.png','velvet.png']
 
 }

@@ -1,0 +1,19 @@
+.image-container {
+    display: inline-block;
+    padding:10px;
+    border-left: 4px solid var(--main-color);
+    border-top: 4px solid var(--main-color);
+    border-bottom: 4px solid var(--main-color);
+    border-radius:153px 380px 441px 410px ;
+    transform: rotate(3.09deg); 
+    left: -15px;
+    right: 17px;
+    top: -23px;
+    bottom: -12px;
+    z-index: -1;
+}
+
+img {
+    display: block;
+    max-width: 100%; /* Responsive image */
+}
