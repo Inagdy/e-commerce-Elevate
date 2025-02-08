@@ -1,3 +1,94 @@
-<section >
-    <app-side-bar-card [title]="'Category'"></app-side-bar-card>
+<section>
+  <app-side-bar-card [title]="'Category'">
+    <div class="px-6 pb-6">
+      @for(item of firstcard ; track $index){
+      <div
+        class="flex flex-row justify-between items-center text-sm leading-5 text-[--secand-text-color]"
+      >
+        <div class="flex flex-row items-center gap-[10px]">
+          <input type="checkbox" class="checked:bg-blue-500 ..." />
+          <p>{{ item }}</p>
+        </div>
+        <div>
+          <P>(8)</P>
+        </div>
+      </div>
+      }
+    </div>
+  </app-side-bar-card>
+
+  <app-side-bar-card [title]="'Brands'">
+    <div class="px-6 pb-6">
+      @for(item of secandcard ; track $index){
+      <div
+        class="flex flex-row justify-between items-center text-sm leading-5 text-[--secand-text-color]"
+      >
+        <div class="flex flex-row items-center gap-2">
+          <input type="checkbox" class="checked:bg-blue-500 ..." />
+          <p>{{ item }}</p>
+        </div>
+        <div>
+          <P>(8)</P>
+        </div>
+      </div>
+      }
+    </div>
+  </app-side-bar-card>
+
+  <app-side-bar-card [title]="'Price Rating'">
+    <div class="px-6 pb-6">
+      <div class="flex flex-col items-start">
+        <label
+          for="range"
+          class="mb-2 font-normal text-sm leading-6 text-[--main-color]"
+          >$ 0 - $ {{ value }}</label
+        >
+        <input
+          type="range"
+          id="range"
+          min="0"
+          max="100"
+          [(ngModel)]="value"
+          class="w-full h-2 range-slider rounded-lg cursor-pointer"
+        />
+      </div>
+    </div>
+  </app-side-bar-card>
+
+  <app-side-bar-card [title]="'Sales'">
+    <div class="px-6 pb-6">
+      @for(item of salescard ; track $index){
+      <div
+        class="flex flex-row justify-between items-center text-sm leading-5 text-[--secand-text-color]"
+      >
+        <div class="flex flex-row items-center gap-2">
+          <input type="checkbox" class="checked:bg-blue-500 ..." />
+          <p>{{ item }}</p>
+        </div>
+        <div>
+          <P>(8)</P>
+        </div>
+      </div>
+      }
+    </div>
+  </app-side-bar-card>
+
+  <app-side-bar-card [title]="'Ratings'">
+    <div class="px-6 pb-6"></div>
+  </app-side-bar-card>
+
+  <app-side-bar-card [title]="'Sizes'">
+    <div class="px-6 pb-6">
+      @for(item of sizes ; track $index){
+      <div
+        class="flex flex-row justify-between items-center text-sm leading-5 text-[--secand-text-color]"
+      >
+        <div class="flex flex-row items-center gap-2">
+          <input type="checkbox" class="checked:bg-blue-500 ..." />
+          <p>{{ item }}</p>
+        </div>
+      </div>
+      }
+    </div>
+  </app-side-bar-card>
 </section>
