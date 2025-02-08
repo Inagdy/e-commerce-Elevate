@@ -1,0 +1,32 @@
+<div class="product">
+  <div class="product-image">
+    <img class = "main-img" [src]="product().imgCover" alt="">
+    <div class="product-image-icons">
+      <div class="image" (click)="showImagePreview()">
+        <img src="icons/eye.svg" alt="" />
+      </div>
+      <div class="image">
+        <img src="icons/heart.png" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="product-details">
+    <div class="product-details-info">
+        <p class="product-details-info-name">{{product().title}}</p>
+        <div class="price">
+            <p class="price-after-discount">{{product().priceAfterDiscount | currency}}</p>
+            <p class="price-before-discount">{{product().price | currency}}</p>
+        </div>
+      </div>
+      <div class="cart-icon-img">
+        <img class = "cart-icon" src="/icons/basket.png" alt="" />
+      </div>
+  </div>
+</div>
+@if(displayImagePreview())
+{
+    <div class="image-preview">
+        <button class = "close-preview-btn" (click)="closeImagePreview()">&times;</button>
+        <img class = "main-img" [src]="product().imgCover" alt="">
+    </div>
+}

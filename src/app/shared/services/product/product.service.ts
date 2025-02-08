@@ -6,6 +6,8 @@ import { catchError, map, Observable, throwError } from 'rxjs';
 import { AdaptallproductService } from './adapt/adaptcatogres/adaptallcatogres.service';
 import { poularproduct } from '../../interfaces/product/poularproduct';
 import { Allproduct } from '../../interfaces/allproducts/all-categorys';
+import { Allcatogory } from '../../interfaces/allcatogory/allcatogory';
+import { AllProductsRes } from '../../interfaces/allproduct/allproduct';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +24,9 @@ export class ProductService {
         return throwError(error)
       })
     );
+  }
+  getAllproducts(page:number , limit:number = 10):Observable<AllProductsRes>{
+    return this._httpClient.get<AllProductsRes>(`https://flower.elevateegy.com/api/v1/products?page=${page}&limit=${limit}`);
   }
 
 

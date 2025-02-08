@@ -1,0 +1,20 @@
+<div class="products mt-5">
+  <div
+    class="products-items container grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 gap-4"
+  >
+    @for (product of productsData().products; track product._id) {
+    <div class="product">
+      <app-product-item [product]="product" />
+    </div>
+    }
+  </div>
+  @if(numberOfPages())
+  {
+      <div class="mt-6 text-center pb-5">
+        <app-pagination
+          [numberOfPages]="numberOfPages()"
+          (getCurrentPage)="getCurrentPage($event)"
+        />
+      </div>
+  }
+</div>

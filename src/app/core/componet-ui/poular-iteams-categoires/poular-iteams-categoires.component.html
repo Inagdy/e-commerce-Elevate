@@ -1,11 +1,12 @@
-
-<ul class="flex  gap-[24px]">
-@for (item of catgorys.slice(0,4); track $index) {
-<li class="categoires"  [ngClass]="{ active: activeIndex() === $index }"
-(click)="setactve($index)"
-(click)="getkeword(item.name)"
->{{item.name | firstuppercase }}
-
-</li>
-}
+<ul class="flex gap-[24px]">
+  @for (item of catgorys.slice(0,4); track $index) {
+  <li
+    class="categoires"
+    [ngClass]="{ active: activeIndex() === $index }"
+    (click)="setactve($index)"
+    (click)="getkeword(item.name)"
+  >
+    {{ item.name | firstuppercase }}
+  </li>
+  }
 </ul>

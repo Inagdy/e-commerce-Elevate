@@ -1,0 +1,29 @@
+<div class="pagination">
+  <button
+    class="prev-btn"
+    (click)="getPrevPage()"
+    [disabled]="currentPage === 1"
+    [class.disabled-btn]="currentPage === 1"
+  >
+    <img src="icons/arrow-left.svg" alt="" />
+  </button>
+  <div class="pagination-numbers">
+    @for (page of pages; track $index) {
+    <div
+      (click)="gotoCurrentPage(page)"
+      class="page-number"
+      [class.first-page]="currentPage === page"
+    >
+      {{ page }}
+    </div>
+    }
+  </div>
+  <button
+    class="next-btn"
+    (click)="getNextPage()"
+    [disabled]="currentPage === numberOfPages()"
+    [class.disabled-btn]="currentPage === numberOfPages()"
+  >
+    <img src="icons/arrow-right.svg" alt="" />
+  </button>
+</div>

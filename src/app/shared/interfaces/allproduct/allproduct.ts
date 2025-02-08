@@ -17,4 +17,16 @@ export interface allProduct {
     sold: number
     id: string
   }
+  export interface AllProductsRes {
+    message: string
+    metadata: ProductsMetadata
+    products: allProduct[]
+  }
   
+  export interface ProductsMetadata {
+    currentPage: number
+    limit: number
+    totalPages: number
+    totalItems: number
+    nextPage:number
+  }
