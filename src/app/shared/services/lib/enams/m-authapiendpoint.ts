@@ -8,5 +8,5 @@ export class Authendpoint {
   static ResetPassword =
     'https://flower.elevateegy.com/api/v1/auth/resetPassword';
 
-  static useriFno = 'https://exam.elevateegy.com/api/v1/auth/profileData';
+
 }

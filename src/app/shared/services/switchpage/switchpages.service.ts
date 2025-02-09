@@ -8,13 +8,13 @@ import { callAPIService } from '../CALLAPI/callapi.service';
 export class SwitchpagesService {
   constructor() {}
 
-  bages: WritableSignal<string> = signal('login');
+  pages: WritableSignal<string> = signal('login');
   _callservise = inject(callAPIService);
   rout = inject(Router);
 
   switchToLogin() {
     if (this._callservise.showloginpage()) {
-      this.bages.set('login');
+      this.pages.set('login');
     } else {
       this.rout.navigate(['/login']);
     }
@@ -22,20 +22,20 @@ export class SwitchpagesService {
 
   switchToRegister() {
     if (this._callservise.showloginpage()) {
-      this.bages.set('register');
+      this.pages.set('register');
     } else {
       this.rout.navigate(['/regester']);
     }
   }
   switchToForgetpass() {
     if (this._callservise.showloginpage()) {
-      this.bages.set('forgetPassword');
+      this.pages.set('forgetPassword');
     } else {
       this.rout.navigate(['/forgetpassword']);
     }
   }
 
   getCurrentPage(): string {
-    return this.bages();
+    return this.pages();
   }
 }
