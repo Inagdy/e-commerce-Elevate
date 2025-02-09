@@ -5,7 +5,7 @@ import {
 import { TestBed } from '@angular/core/testing';
 import { CategoryService } from './category.service';
 import { AdaptallcategoryService } from './adapt/adaptallcategory.service';
-import { categoriesadapt } from '../../../mocapdata/adaptcategoreis/adaptcategories';
+import { categoriesAdapt } from '../../../mocapdata/adaptcategoreis/adaptcategories';
 import { category } from '../../../mocapdata/categories/categories';
 
 describe('CategoryService', () => {
@@ -39,10 +39,10 @@ expect(service).toBeTruthy()
 
 it('should return all categories',()=>{
 
-  adaptedResponse.adaptallcategory.and.returnValue(categoriesadapt)
+  adaptedResponse.adaptallcategory.and.returnValue(categoriesAdapt)
 service.getAllgategory().subscribe((res)=>{
 expect(res).toBeTruthy()
-expect(res).toBe(categoriesadapt)
+expect(res).toBe(categoriesAdapt)
 })
 
 let req = httpTestingController.expectOne(('https://flower.elevateegy.com/api/v1/categories'))

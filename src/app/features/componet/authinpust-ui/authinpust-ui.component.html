@@ -1,10 +1,10 @@
 <form class="" action="" [formGroup]="form" (ngSubmit)="outputinput()">
-  <app-textauth [Text]="headbages"></app-textauth>
+  <app-textauth [Text]="headPages"></app-textauth>
 
 
   <app-errapi></app-errapi>
   <div class="flex flex-col">
-    @for (item of Input; track $index) {
+    @for (item of inputs; track $index) {
     <!-- inputs  -->
     <input
       class="m-[10px] p-[8px] rounded-[20px] outline-none shadow"
@@ -16,11 +16,11 @@
     <!-- error come from FromGroup -->
     <app-errocomponets
       [formGroup]="form"
-      [inputname]="item.formcontrol"
+      [inputName]="item.formcontrol"
     ></app-errocomponets>
     }
   </div>
-@if (Bage == 'login') {
+@if (page == 'login') {
     <div class="flex justify-between items-center mt-[20px]">
     <div>
       <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
@@ -38,7 +38,7 @@
 
 
   <div class="flex justify-center items-center mt-[24px]">
-    @if (Bage == 'login') {
+    @if (page == 'login') {
        <p>
       No account?
       <span
@@ -47,7 +47,7 @@
         >Create one here</span
       >
     </p>
-    }@else if (Bage =='regster') {
+    }@else if (page =='regster') {
 
       <p>
         Already have an account?

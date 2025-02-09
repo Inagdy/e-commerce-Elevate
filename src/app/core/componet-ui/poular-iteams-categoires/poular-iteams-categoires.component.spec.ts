@@ -8,7 +8,7 @@ import { By } from '@angular/platform-browser';
 import { PoularIteamsCategoiresComponent } from './poular-iteams-categoires.component';
 import { NgClass } from '@angular/common';
 import { FirstuppercasePipe } from '../../../shared/pipe/firstuppercase.pipe';
-import { categoriesadapt } from '../../../mocapdata/adaptcategoreis/adaptcategories';
+import { categoriesAdapt } from '../../../mocapdata/adaptcategoreis/adaptcategories';
 
 describe('PoularIteamsCategoiresComponent', () => {
   let componet: PoularIteamsCategoiresComponent;
@@ -31,7 +31,7 @@ describe('PoularIteamsCategoiresComponent', () => {
   });
 
   it('should return product-catogory from PoularIteamsCategoiresComponent', () => {
-    componet.catgorys =categoriesadapt ;
+    componet.catgorys =categoriesAdapt ;
     fixure.detectChanges();
     const cardS = ele.queryAll(By.css('.categoires'));
     expect(cardS).toBeTruthy();
@@ -39,11 +39,11 @@ describe('PoularIteamsCategoiresComponent', () => {
   });
 
   it('should return first elemnt',()=>{
-    componet.catgorys = categoriesadapt ;
+    componet.catgorys = categoriesAdapt ;
     fixure.detectChanges();
     const firstCard = ele.query(By.css('.categoires'));
 
-     expect(firstCard.nativeElement.textContent).toContain(categoriesadapt[0].name.charAt(0).toUpperCase() + categoriesadapt[0].name.slice(1));
+     expect(firstCard.nativeElement.textContent).toContain(categoriesAdapt[0].name.charAt(0).toUpperCase() + categoriesAdapt[0].name.slice(1));
   })
 
 

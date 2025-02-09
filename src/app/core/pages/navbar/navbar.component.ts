@@ -1,6 +1,5 @@
 import { Component, inject, signal, WritableSignal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { ModallayerComponent } from '../../../shared/components/UI/modallayer/modallayer.component';
 import { LoginComponent } from '../../../shared/components/UI/login/login.component';
 import { RegesterComponent } from '../../../shared/components/UI/regester/regester.component';
 import { AuthpagesmodalComponent } from "../../../shared/components/bussienss/authpagesmodal/authpagesmodal.component";

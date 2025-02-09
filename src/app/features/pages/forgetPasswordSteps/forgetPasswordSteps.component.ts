@@ -3,16 +3,16 @@ import { ForgetpasswordComponent } from "../../../shared/components/UI/forgetpas
 import { callAPIService } from '../../../shared/services/CALLAPI/callapi.service';
 import { VerifycodeComponent } from "../../../shared/components/UI/verifycode/verifycode.component";
 import { ResetpasswordComponent } from "../../../shared/components/UI/resetpassword/resetpassword.component";
-import { LoginpageComponent } from "../loginpage/loginpage.component";
+
 import { LoginComponent } from "../../../shared/components/UI/login/login.component";
 
 @Component({
-  selector: 'app-forgetpasswordpage',
+  selector: 'app-forgetPasswordSteps',
   imports: [ForgetpasswordComponent, VerifycodeComponent, ResetpasswordComponent, LoginComponent],
-  templateUrl: './forgetpasswordpage.component.html',
-  styleUrl: './forgetpasswordpage.component.scss'
+  templateUrl: './forgetPasswordSteps.component.html',
+  styleUrl: './forgetPasswordSteps.component.scss'
 })
-export class ForgetpasswordpageComponent {
+export class forgetPasswordSteps {
   steps:any;
   constructor(private _callAPIService: callAPIService) {
     effect(() => {

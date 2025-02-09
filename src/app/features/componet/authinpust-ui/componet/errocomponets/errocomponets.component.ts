@@ -11,6 +11,6 @@ import { FormGroup } from '@angular/forms';
 })
 export class ErrocomponetsComponent {
  
-  @Input() inputname!: string;
+  @Input() inputName!: string;
   @Input() formGroup!: FormGroup;
 }

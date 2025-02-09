@@ -1,5 +1,5 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Inpust } from '../../../../features/componet/authinpust-ui/interfaces/inpusts/inpust';
+import { inpustInterface } from '../../../../features/componet/authinpust-ui/interfaces/inpusts/inpustInterface';
 import { callAPIService } from './../../../services/CALLAPI/callapi.service';
 import { Component } from '@angular/core';
 import { Forgetpassform } from '../../../interfaces/auth/forgetpass';
@@ -14,7 +14,7 @@ import { AuthinpustUiComponent } from "../../../../features/componet/authinpust-
 export class ForgetpasswordComponent {
   constructor(private _callAPIService: callAPIService) {}
 
-  forgetPassInputs: Inpust[] = [
+  forgetPassInputs: inpustInterface[] = [
     { type: 'email', formcontrol: 'email', placeholder: 'enter yor email' },
   ];
 

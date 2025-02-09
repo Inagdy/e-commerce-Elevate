@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { LoginComponent } from "../../../shared/components/UI/login/login.component";
 
 @Component({
-  selector: 'app-loginpage',
+  selector: 'app-login-page',
   imports: [LoginComponent],
-  templateUrl: './loginpage.component.html',
-  styleUrl: './loginpage.component.scss'
+  templateUrl: './login-page.component.html',
+  styleUrl: './login-page.component.scss'
 })
-export class LoginpageComponent {
+export class LoginPageComponent {
 
 }

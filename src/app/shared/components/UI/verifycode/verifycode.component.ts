@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthinpustUiComponent } from "../../../../features/componet/authinpust-ui/authinpust-ui.component";
 import { callAPIService } from '../../../services/CALLAPI/callapi.service';
-import { Inpust } from '../../../../features/componet/authinpust-ui/interfaces/inpusts/inpust';
+import { inpustInterface } from '../../../../features/componet/authinpust-ui/interfaces/inpusts/inpustInterface';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -13,19 +13,20 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class VerifycodeComponent {
   constructor(private _callAPIService: callAPIService) {}
 
-  inputs: Inpust[] = [
+  verifyCodeInputs: inpustInterface[] = [
     {
       type: 'number',
       formcontrol: 'resetCode',
       placeholder: 'enter yor valid number',
     },
+
   ];
 
-  ResetCode: FormGroup= new FormGroup({
+  verifyCodeForm: FormGroup= new FormGroup({
     resetCode: new FormControl(null, [Validators.required]),
   });
 
-  verifyode(formvalu: { resetCode: string }) {
-    this._callAPIService.VerifyResetCode(formvalu, this.ResetCode);
+  VerifyCode(formvalu: { resetCode: string }) {
+    this._callAPIService.VerifyResetCode(formvalu, this.verifyCodeForm);
   }
 }

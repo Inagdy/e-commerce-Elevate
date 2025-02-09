@@ -1,12 +1,11 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
-import { Inpust } from './interfaces/inpusts/inpust';
+import { inpustInterface } from './interfaces/inpusts/inpustInterface';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ErrocomponetsComponent } from "./componet/errocomponets/errocomponets.component";
 import { TextauthComponent } from "./componet/textauth/textauth.component";
 import { BottonComponent } from "../../../shared/components/button/button.component";
 import { ButtonauthComponent } from "./componet/buttonauth/buttonauth.component";
 import { ErrapiComponent } from "./componet/errorapi/errapi/errapi.component";
-import { RouterLink } from '@angular/router';
 import { SwitchpagesService } from '../../../shared/services/switchpage/switchpages.service';
 
 @Component({
@@ -18,15 +17,15 @@ import { SwitchpagesService } from '../../../shared/services/switchpage/switchpa
 export class AuthinpustUiComponent {
   @Output() inputvalu = new EventEmitter<any>();
   // This value receives the input type
-  @Input() Input!: Inpust[];
+  @Input() inputs!: inpustInterface[];
   // This value receives formgroup
   @Input() form!: FormGroup;
   // This value receives headbagesname
-  @Input() headbages!: string;
+  @Input() headPages!: string;
 
   // p
   @Input() buttonvalue!: string;
-  @Input() Bage!: string;
+  @Input() page!: string;
 
 
   _switchpages = inject(SwitchpagesService)

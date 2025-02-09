@@ -3,7 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthinpustUiComponent } from '../../../../features/componet/authinpust-ui/authinpust-ui.component';
 import { callAPIService } from '../../../services/CALLAPI/callapi.service';
-import { Inpust } from '../../../../features/componet/authinpust-ui/interfaces/inpusts/inpust';
+import {  inpustInterface } from '../../../../features/componet/authinpust-ui/interfaces/inpusts/inpustInterface';
 
 
 @Component({
@@ -15,7 +15,7 @@ import { Inpust } from '../../../../features/componet/authinpust-ui/interfaces/i
 export class RegesterComponent {
   _callAPIService = inject(callAPIService);
 
-  singupinputs: Inpust[] = [
+  singupInputs: inpustInterface[] = [
     {
       type: 'firstName',
       formcontrol: 'firstName',

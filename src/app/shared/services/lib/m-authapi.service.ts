@@ -79,9 +79,8 @@ export class MAuthapiService implements methodauth {
     );
   }
 
-  userInfo(): Observable<AdaptuserInfoRes> {
-    return this._httpClient
-      .get(Authendpoint.useriFno)
-      .pipe(map((res: any) => this._userInfoService.adaptUserInfo(res)));
+  userInfo(): any {
+
   }
+
 }

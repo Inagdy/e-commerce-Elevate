@@ -11,7 +11,7 @@ export class ButtonauthComponent {
 
   looding: () => boolean = () => false;
   calapi: () => boolean = () => false;
-  @Input() Adisabled!: boolean ;
+  @Input() adisabled!: boolean ;
 
   constructor(private _callAPIService: callAPIService) {
     effect(() => {
