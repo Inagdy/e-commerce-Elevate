@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { methodauth } from './base/methodauth';
 import { catchError, map, Observable, of, throwError } from 'rxjs';
 import { Authendpoint } from './enams/m-authapiendpoint';
@@ -21,12 +21,14 @@ import { AdaptuserInfoRes } from './adapt/adaptuserinfo/adapt.userinfores/adaptu
 })
 export class MAuthapiService implements methodauth {
   constructor(
-    private _httpClient: HttpClient,
+   
     private _adaptForgetService: AdaptForgetService,
     private _adaptSeRVICE: AdaptService,
     private _adapterror: ErrorService,
     private _userInfoService: UserInfoService
   ) {}
+  _httpClient = inject(HttpClient)
+
   login(data: logForm): Observable<LoginRes | ErrorRes> {
     return this._httpClient.post(Authendpoint.LOGIN, data).pipe(
       map((response: any) => this._adaptSeRVICE.adapt(response)),
