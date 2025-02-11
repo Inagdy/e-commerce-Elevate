@@ -1,22 +1,25 @@
 <section>
+  <!-- Category -->
   <app-side-bar-card [title]="'Category'">
     <div class="px-6 pb-6">
-      @for(item of firstcard ; track $index){
-      <div
-        class="flex flex-row justify-between items-center text-sm leading-5 text-[--secand-text-color]"
-      >
-        <div class="flex flex-row items-center gap-[10px]">
-          <input type="checkbox" class="checked:bg-blue-500 ..." />
-          <p>{{ item }}</p>
-        </div>
-        <div>
-          <P>(8)</P>
-        </div>
+      @for(item of firstcard ; track $index; let i=$index){
+        <div class="flex flex-row justify-between items-center text-sm leading-5 text-[--secand-text-color]" >
+          <form [formGroup]="form" class="flex flex-row items-center gap-[10px]">
+            <label >
+              <!-- <input formControlName="i" type="checkbox" class="checked:bg-blue-500 ..." />    -->
+              <input type="text" formControlName="i" >         
+              {{ item }}</label>
+            </form>
+            <div>
+              <P>(8)</P>
+            </div>
+          </div>
+        }
       </div>
-      }
-    </div>
-  </app-side-bar-card>
-
+    </app-side-bar-card>
+    <button (click)="getCheckedObjects()">Get Checked Objects</button>
+  
+  <!-- brands -->
   <app-side-bar-card [title]="'Brands'">
     <div class="px-6 pb-6">
       @for(item of secandcard ; track $index){
@@ -34,10 +37,10 @@
       }
     </div>
   </app-side-bar-card>
-
+  <!-- price -->
   <app-side-bar-card [title]="'Price Rating'">
     <div class="px-6 pb-6">
-      <div class="flex flex-col items-start">
+      <div class ="flex flex-col items-start">
         <label
           for="range"
           class="mb-2 font-normal text-sm leading-6 text-[--main-color]"
@@ -47,14 +50,14 @@
           type="range"
           id="range"
           min="0"
-          max="100"
+          max="10000"
           [(ngModel)]="value"
-          class="w-full h-2 range-slider rounded-lg cursor-pointer"
+          class=" w-full h-2 range-slider rounded-lg  cursor-pointer appearance-none"
         />
       </div>
     </div>
   </app-side-bar-card>
-
+  <!-- sales -->
   <app-side-bar-card [title]="'Sales'">
     <div class="px-6 pb-6">
       @for(item of salescard ; track $index){
@@ -72,11 +75,25 @@
       }
     </div>
   </app-side-bar-card>
-
+  <!-- rating -->
   <app-side-bar-card [title]="'Ratings'">
-    <div class="px-6 pb-6"></div>
-  </app-side-bar-card>
+    <div class="px-6 pb-6">
+      @for(item of star ; track $index){
+      <div
+        class="flex flex-row justify-between items-center text-sm leading-5 text-[--secand-text-color]"
+      >
+        <div class="flex flex-row items-center gap-2 mb-[7px]">
+          <input type="checkbox" class="checked:bg-blue-500 ..." />
 
+            @for(item of star ; track $index ;let idx = $index ){
+               <i [ngClass]="{'fa-solid': idx <= star_number , 'fa-regular': idx > star_number}" class="fa-star" style="color: #f82ba9"></i>
+              }
+        </div>                                                                                                                                                                                                         
+      </div>  
+      }
+    </div>
+  </app-side-bar-card>
+  <!-- size -->
   <app-side-bar-card [title]="'Sizes'">
     <div class="px-6 pb-6">
       @for(item of sizes ; track $index){
@@ -87,8 +104,12 @@
           <input type="checkbox" class="checked:bg-blue-500 ..." />
           <p>{{ item }}</p>
         </div>
+        <div>
+          <P>(8)</P>
+        </div>
       </div>
       }
     </div>
   </app-side-bar-card>
+
 </section>
