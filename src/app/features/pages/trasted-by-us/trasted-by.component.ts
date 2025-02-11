@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BottonComponent } from "../../../shared/components/button/button.component";
+import { BottonComponent } from "../../../shared/components/UI/button/button.component";
 
 @Component({
   selector: 'app-trusted-by',

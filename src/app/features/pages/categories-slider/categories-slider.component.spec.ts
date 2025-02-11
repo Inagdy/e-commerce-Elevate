@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed ,waitForAsync} from '@angular/core/testing';
-import { GategoriesSliderComponent } from './categories-slider.component';
+import { categoriesSliderComponent } from './categories-slider.component';
 
 describe('GategoriesSliderComponent', () => {
-  let component: GategoriesSliderComponent;
-  let fixture: ComponentFixture<GategoriesSliderComponent>;
+  let component: categoriesSliderComponent;
+  let fixture: ComponentFixture<categoriesSliderComponent>;
 
   beforeEach(waitForAsync (() => {
       TestBed.configureTestingModule({
-      imports: [GategoriesSliderComponent]
+      imports: [categoriesSliderComponent]
     })
     .compileComponents().then(() => {   
-      fixture = TestBed.createComponent(GategoriesSliderComponent);
+      fixture = TestBed.createComponent(categoriesSliderComponent);
       component = fixture.componentInstance;
     });
   }));
