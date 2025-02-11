@@ -1,13 +1,9 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-
-
-
-
 import { By } from '@angular/platform-browser';
 import { PoularIteamsCategoiresComponent } from './poular-iteams-categoires.component';
 import { NgClass } from '@angular/common';
-import { FirstuppercasePipe } from '../../../shared/pipe/firstuppercase.pipe';
+import { FirstuppercasePipe } from '../../../shared/pipe/firstUpercase/firstuppercase.pipe';
 import { categoriesAdapt } from '../../../mocapdata/adaptcategoreis/adaptcategories';
 
 describe('PoularIteamsCategoiresComponent', () => {

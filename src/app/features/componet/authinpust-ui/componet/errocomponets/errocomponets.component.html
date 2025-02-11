@@ -1,0 +1,39 @@
+@if (formGroup.get(inputName)?.errors && formGroup.get(inputName)?.touched) {
+  @if (formGroup.get(inputName)?.errors?.['required']) {
+    <div class="p-2 text-sm text-red-800 rounded-[10px] m-2 bg-red-50" role="alert">
+      <span class="font-medium">{{ inputName }} is Required</span>
+    </div>
+  }
+  @else if (formGroup.get(inputName)?.errors?.['email']) {
+    <div class="p-2 text-sm text-red-800 border-round bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+      <span class="font-medium">Please enter a valid email</span>
+    </div>
+  }
+  @else if (formGroup.get(inputName)?.errors?.['pattern'] && inputName === 'phone') {
+    <div class="p-2 text-sm text-red-800 border-round bg-red-50" role="alert">
+      <span class="font-medium">Please enter a valid phone number. It should start with +20 followed by 10 digits.</span>
+    </div>
+  }
+  @else if (formGroup.get(inputName)?.errors?.['pattern']) {
+    <div class="p-2 text-sm text-red-800 border-round bg-red-50 rounded-[10px]" role="alert">
+      <span class="font-medium">Invalid format for {{ inputName }}</span>
+    </div>
+  }
+}
+ @else if (formGroup.get(inputName)?.errors?.['minlength']) {
+  <div class="p-2 text-sm text-red-800 rounded-[10px] m-2 bg-red-50" role="alert">
+    <span class="font-medium">Minlength!</span> Please enter at least 3 characters and a maximum of 10.
+  </div>
+}
+@else if (formGroup.get(inputName)?.errors?.['maxlength']) {
+  <div class="p-2 text-sm text-red-800 rounded-[10px] m-2 bg-red-50" role="alert">
+    <span class="font-medium">Maxlength!</span> Please enter no more than 10 characters.
+  </div>
+}
+@if (inputName == 'rePassword') { 
+  @if (formGroup.errors?.['mismatch']) {
+    <div class="p-2 text-sm text-red-800 rounded-[10px] m-2 bg-red-50" role="alert">
+      <span class="font-medium">Please enter the same password</span>
+    </div>
+  } 
+}
