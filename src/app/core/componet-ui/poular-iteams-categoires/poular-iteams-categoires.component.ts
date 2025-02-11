@@ -1,6 +1,6 @@
 import { NgClass, UpperCasePipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output, output, signal, WritableSignal } from '@angular/core';
-import { FirstuppercasePipe } from '../../../shared/pipe/firstuppercase.pipe';
+import { FirstuppercasePipe } from '../../../shared/pipe/firstUpercase/firstuppercase.pipe';
 
 @Component({
   selector: 'app-poular-iteams-categoires',

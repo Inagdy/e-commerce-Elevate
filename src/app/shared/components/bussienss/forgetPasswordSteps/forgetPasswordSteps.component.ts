@@ -1,10 +1,10 @@
 import { Component, computed, effect } from '@angular/core';
-import { ForgetpasswordComponent } from "../../../shared/components/UI/forgetpassword/forgetpassword.component";
-import { callAPIService } from '../../../shared/services/CALLAPI/callapi.service';
-import { VerifycodeComponent } from "../../../shared/components/UI/verifycode/verifycode.component";
-import { ResetpasswordComponent } from "../../../shared/components/UI/resetpassword/resetpassword.component";
+import { ForgetpasswordComponent } from '../../UI/forgetpassword/forgetpassword.component';
+import { VerifycodeComponent } from '../../UI/verifycode/verifycode.component';
+import { ResetpasswordComponent } from '../../UI/resetpassword/resetpassword.component';
+import { LoginComponent } from '../../UI/login/login.component';
+import { callAPIService } from '../../../services/CALLAPI/callapi.service';
 
-import { LoginComponent } from "../../../shared/components/UI/login/login.component";
 
 @Component({
   selector: 'app-forgetPasswordSteps',

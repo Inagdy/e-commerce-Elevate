@@ -3,7 +3,7 @@ import { inpustInterface } from './interfaces/inpusts/inpustInterface';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ErrocomponetsComponent } from "./componet/errocomponets/errocomponets.component";
 import { TextauthComponent } from "./componet/textauth/textauth.component";
-import { BottonComponent } from "../../../shared/components/button/button.component";
+import { BottonComponent } from "../../../shared/components/UI/button/button.component";
 import { ButtonauthComponent } from "./componet/buttonauth/buttonauth.component";
 import { ErrapiComponent } from "./componet/errorapi/errapi/errapi.component";
 import { SwitchpagesService } from '../../../shared/services/switchpage/switchpages.service';

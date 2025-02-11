@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { forgetPasswordSteps } from "../forgetPasswordSteps/forgetPasswordSteps.component";
+import { forgetPasswordSteps } from '../../../shared/components/bussienss/forgetPasswordSteps/forgetPasswordSteps.component';
 
 @Component({
   selector: 'app-forget-password-page',

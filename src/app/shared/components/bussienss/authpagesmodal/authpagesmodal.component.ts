@@ -4,8 +4,9 @@ import { LoginComponent } from "../../UI/login/login.component";
 import { RegesterComponent } from "../../UI/regester/regester.component";
 import { SwitchpagesService } from '../../../services/switchpage/switchpages.service';
 import { ForgetpasswordComponent } from "../../UI/forgetpassword/forgetpassword.component";
-import { forgetPasswordSteps } from "../../../../features/pages/forgetPasswordSteps/forgetPasswordSteps.component";
+
 import { reusableModal } from "../../UI/reusableModal/reusableModal.component";
+import { forgetPasswordSteps } from '../forgetPasswordSteps/forgetPasswordSteps.component';
 
 @Component({
   selector: 'app-authpagesmodal',

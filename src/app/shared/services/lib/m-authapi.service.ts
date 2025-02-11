@@ -20,14 +20,13 @@ import { AdaptuserInfoRes } from './adapt/adaptuserinfo/adapt.userinfores/adaptu
   providedIn: 'root',
 })
 export class MAuthapiService implements methodauth {
-  constructor(
-   
-    private _adaptForgetService: AdaptForgetService,
-    private _adaptSeRVICE: AdaptService,
-    private _adapterror: ErrorService,
-    private _userInfoService: UserInfoService
-  ) {}
+
   _httpClient = inject(HttpClient)
+  _adaptForgetService = inject(AdaptForgetService)
+  _adaptSeRVICE = inject(AdaptService)
+  _adapterror = inject(ErrorService)
+  _userInfoService = inject(UserInfoService)
+
 
   login(data: logForm): Observable<LoginRes | ErrorRes> {
     return this._httpClient.post(Authendpoint.LOGIN, data).pipe(
